@@ -2,13 +2,17 @@ import React from "react";
 import UserAvatar from "../userAvatar";
 import styles from "./Ticket.module.css";
 
-const Ticket = () => {
+const Ticket = ({ data }) => {
   return (
-    <div className={styles.ticket}>
-      <UserAvatar />
-      <span className={styles.reportedContent}>1994/26/07</span>
-      <span className={styles.assetContent}>Sign</span>
-      <button className={styles.statusButton}>Com</button>
+    <div>
+      {data.map(item => (
+        <div className={styles.ticket}>
+          <UserAvatar ava={item.owner.avatar} />
+          <span className={styles.reportedContent}>{item.reportedTime}</span>
+          <span className={styles.assetContent}>{item.asset.name}</span>
+          <button className={styles.statusButton}>{item.status}</button>
+        </div>
+      ))}
     </div>
   );
 };
