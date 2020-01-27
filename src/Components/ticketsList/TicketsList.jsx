@@ -4,7 +4,7 @@ import TicketsTop from "../ticketsTop/TicketsTop";
 import Ticket from "../ticket/Ticket";
 import UserContext from "../../Contexts/UserContext";
 
-const UserInfo = () => {
+const UserInfo = ({ handleClick }) => {
   const tikeet = useContext(UserContext);
 
   console.log("JJJIIIKAAA", tikeet);
@@ -12,7 +12,7 @@ const UserInfo = () => {
   return (
     <div className={styles.ticketsList}>
       <TicketsTop />
-      <Ticket data={tikeet} />
+      <Ticket data={tikeet} handleClick={handleClick} />
     </div>
   );
 };

@@ -12,8 +12,7 @@ const App = () => {
     const request = async () => {
       try {
         const response = await Axios.get(process.env.REACT_APP_TICKETS_API);
-        const tickets = response.data;
-        setData(tickets);
+        setData(response.data);
       } catch (err) {
         console.log("Error:" + err);
       }

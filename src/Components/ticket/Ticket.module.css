@@ -2,7 +2,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid;
+  cursor: pointer;
 }
+.ticket:hover {
+  background: #0080006b;
+  transition: 0.4s;
+}
+
 .statusButton {
   text-transform: uppercase;
 }
